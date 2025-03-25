@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LOGOS-APP2</string>
+    <string name="title_home">Home</string>
+    <string name="title_word">Word</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_favourites">Favourites</string>
+    <string name="meaning">Meaning</string>
+</resources>
