@@ -6,11 +6,13 @@ import android.widget.Toast
 
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
 
@@ -25,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
     private val RC_SIGN_IN = 123
 
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -99,7 +102,7 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun navigateToHome(currentUser: com.google.firebase.auth.FirebaseUser?) {
+    private fun navigateToHome(currentUser: FirebaseUser?) {
         if (currentUser != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -124,11 +127,9 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success
                     Toast.makeText(this, "Google Sign In successful.", Toast.LENGTH_SHORT).show()
                     navigateToHome(auth.currentUser)
                 } else {
-                    // If sign in fails, display a message to the user.
                     Toast.makeText(
                         this,
                         "Google Sign In failed. ${task.exception?.message}",
