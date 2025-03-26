@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522130216412",
+    "project_id": "logos-word-app",
+    "storage_bucket": "logos-word-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522130216412:android:901c99efe537d821a26b19",
+        "android_client_info": {
+          "package_name": "com.kanaegel.logos_app2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522130216412-oj568lr55qb9sip49dsa35l2l0sbplkm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjtGugg-FCYSHHcVhk93z2rmCdV5va_6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522130216412-oj568lr55qb9sip49dsa35l2l0sbplkm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

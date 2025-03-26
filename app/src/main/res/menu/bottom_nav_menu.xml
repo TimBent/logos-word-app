@@ -3,13 +3,8 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/baseline_auto_stories_24"
-        android:title="@string/title_word" />
-
-    <item
-        android:id="@+id/navigation_dashboard"
         android:icon="@drawable/logos_app_icon"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_word" />
 
     <item
         android:id="@+id/navigation_notifications"
