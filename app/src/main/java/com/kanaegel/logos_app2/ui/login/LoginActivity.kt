@@ -13,17 +13,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.kanaegel.logos_app2.ui.signup.SignUpActivity
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth // No more fully qualified name here
     private lateinit var emailEditText: android.widget.EditText
     private lateinit var passwordEditText: android.widget.EditText
     private lateinit var loginButton: android.widget.Button
     private lateinit var signUpTextView: android.widget.TextView
-    private lateinit var googleSignInButton: android.widget.Button
+    private lateinit var googleSignInButton: com.google.android.gms.common.SignInButton
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var googleSignInLauncher: ActivityResultLauncher<android.content.Intent>
+    private lateinit var auth: FirebaseAuth // No more fully qualified name here
     private val RC_SIGN_IN = 123
 
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
@@ -33,18 +34,18 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance() // Using getInstance to get an instance
 
-        emailEditText = findViewById(R.id.emailEditText)
-        passwordEditText = findViewById(R.id.passwordEditText)
-        loginButton = findViewById(R.id.loginButton)
+        emailEditText = findViewById(R.id.editTextEmail)
+        passwordEditText = findViewById(R.id.editTextPassword)
+        loginButton = findViewById(R.id.buttonLogin)
         signUpTextView = findViewById(R.id.signUpTextView)
-        googleSignInButton = findViewById(R.id.googleSignInButton)
+        googleSignInButton = findViewById(R.id.buttonGoogleSignIn)
 
         loginButton.setOnClickListener {
             login()
         }
 
         signUpTextView.setOnClickListener {
-            val intent = Intent(this, SignupActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
