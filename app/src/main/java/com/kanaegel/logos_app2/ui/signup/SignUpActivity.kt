@@ -1,49 +1,55 @@
-package com.kanaegel.logos_app2
+package com.kanaegel.logos_app2.ui.signup
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.kanaegel.logos_app2.LoginActivity
+import com.kanaegel.logos_app2.R
 
-class SignupActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var fullNameEditText: EditText
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
-    private lateinit var confirmPasswordEditText: EditText
     private lateinit var signUpButton: Button
+    private lateinit var logInTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        setContentView(R.layout.activity_sign_up)
 
         auth = FirebaseAuth.getInstance()
 
-        emailEditText = findViewById(R.id.emailEditText)
-        passwordEditText = findViewById(R.id.passwordEditText)
-        confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText)
-        signUpButton = findViewById(R.id.signUpButton)
+        fullNameEditText = findViewById(R.id.editTextFullName)
+        emailEditText = findViewById(R.id.editTextEmail)
+        passwordEditText = findViewById(R.id.editTextPassword)
+        logInTextView = findViewById(R.id.loginTextView)
+        signUpButton = findViewById(R.id.buttonSignUp)
 
         signUpButton.setOnClickListener {
             signUp()
         }
+
+        logInTextView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     private fun signUp() {
         val email = emailEditText.text.toString()
         val password = passwordEditText.text.toString()
-        val confirmPassword = confirmPasswordEditText.text.toString()
 
-        if (email.isBlank() || password.isBlank() || confirmPassword.isBlank()) {
+        if (email.isBlank() || password.isBlank() ) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        if (password != confirmPassword) {
-            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             return
         }
 

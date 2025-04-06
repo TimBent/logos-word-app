@@ -5,5 +5,17 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_favourites">Favourites</string>
     <string name="meaning">Meaning</string>
-    <string name="create_an_account">Create An Account</string>
+    <string name="create_an_account">Create A New \nAccount</string>
+    <string name="sign_in">Sign in to \ncontinue.</string>
+    <string name="password">PASSWORD</string>
+    <string name="email_address">EMAIL</string>
+    <string name="email_address_example">example@example.com</string>
+    <string name="password_hint">************</string>
+    <string name="login">Login</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="example">example</string>
+    <string name="full_name">First Name</string>
+    <string name="sign_up">Sign Up!</string>
+    <string name="logout">log out</string>
+    <string name="already_have_an_account_log_in_here">Already have an account? Log in here</string>
 </resources>

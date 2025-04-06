@@ -57,6 +57,20 @@ dependencies {
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    // Retrofit & OkHttp
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Use latest version
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0' // Use latest compatible version
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0' // Optional: For logging requests/responses
+
+    // JSON Converter (Gson example, use Moshi or Kotlinx Serialization if preferred)
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Kotlin Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3' // Use latest version
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // Lifecycle components for viewModelScope
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2" // Use latest version
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
