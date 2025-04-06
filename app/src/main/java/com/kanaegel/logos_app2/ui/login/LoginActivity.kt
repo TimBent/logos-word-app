@@ -47,6 +47,7 @@ class LoginActivity : AppCompatActivity() {
         signUpTextView.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         // Configure Google Sign In

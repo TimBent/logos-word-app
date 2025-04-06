@@ -7,6 +7,7 @@ data class StrongsEntry(
     var englishWord: String?,
     var transliteration: String?,
     var definition: String?,
+    var entymology: String?,
     var relatedWords: List<String>?,
     var relatedWordsHebrew: List<String>?,
     var relatedWordsTransliteration: List<String>?

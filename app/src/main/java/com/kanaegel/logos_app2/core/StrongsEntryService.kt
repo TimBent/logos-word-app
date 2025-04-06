@@ -23,6 +23,7 @@ class StrongsEntryService {
                simpleEntry.getSTEPUnicodeAccented(),
                simpleEntry.getSTEPTranslit(),
                "",
+               "",
                listOf(),
                listOf(),
                listOf()
@@ -30,6 +31,7 @@ class StrongsEntryService {
        } else {
            StrongsEntry(
                1,
+               "",
                "",
                "",
                "",
@@ -51,7 +53,8 @@ class StrongsEntryService {
                 simpleEntry.stepUnicodeAccented,
                 simpleEntry.stepGloss,
                 simpleEntry.stepTranslit,
-                removeHtmlTags(simpleEntry.bdbMedDef).toString(),
+                simpleEntry.bdbMedDef,
+                simpleEntry.stepEtym,
                 listOf(),
                 listOf(),
                 listOf()
@@ -59,6 +62,7 @@ class StrongsEntryService {
         } else {
             StrongsEntry(
                 1,
+                "",
                 "",
                 "",
                 "",

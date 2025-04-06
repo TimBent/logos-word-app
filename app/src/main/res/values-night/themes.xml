@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/dark_grey</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/dark_grey</item>
+        <item name="colorTertiary">@android:color/transparent</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>
